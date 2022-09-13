@@ -11,6 +11,6 @@ How to run it:
         # or you can put it in crontab or something like that ;)
 
 WARNING:
-        Be careful with configuration of snort and suricata cause this script is checking the alert logs and if detect's a change its going to print the last line in case of massive attack (like ddos,portscan etc.) so it might generate false positives alerts.
+        Be careful with configuration of snort and suricata cause this script is checking the alert logs and if it detect's a change it's going to print the last line (in case of massive attack like ddos,portscan etc.) so it might generate false positive alerts.
         
-    This script was done in 1 day so it's a bit shitty written but you can take it and modify it in your way :)
+    This script was done in 1 day so it's a bit shitty written but you can take it and modify it in your own way :)
