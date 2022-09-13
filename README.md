@@ -6,7 +6,7 @@ How to run it:
 
         pip3 install -r requiremnts.txt && sudo apt install mpg123 -y  #plus you need mpg123 for the notification sound
         
-        python3 ids_alert.py > /dev/null 2>&1 &
+        sudo python3 ids_alert.py > /dev/null 2>&1 &
         
         # or you can put it in crontab or something like that ;)
 
