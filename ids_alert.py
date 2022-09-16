@@ -41,13 +41,18 @@ def activate_service
 def message():
 	r = messagebox.askyesno("Intrution Detected !!", "An Intrution has been detected it might be a false alarm. Disable internet ?")
 	if r == 1:
-		os.system("ifconfig wlan0 down && ifconfig lo down && ifconfig eth0 down && killall NetworkManager")
+		# here modify the interfaces so it will stop all interfaces so the system can go offline
+		try:
+			os.system("ifconfig wlan0 down && ifconfig lo down && ifconfig eth0 down && killall NetworkManager")
+		except:
+			os.system("ifconfig eth0 down && killall NetworkManager")
 		os.system("killall -9 mpg123")
 	else:
 		os.system("killall -9 mpg123")
 	main()
 
 def print_intru():
+	# modify it so it will play your alert sound
 	s = os.system(f"mpg123 /home/{username}/eas.mp3 > /dev/null 2>&1 & ")
 	if warning_2 == 1 and warning_1 == 1:
 		with open('/var/log/snort/snort.alert.fast') as fp:
