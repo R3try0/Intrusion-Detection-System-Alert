@@ -4,7 +4,7 @@ from tkinter import *
 from time import sleep
 
 
-
+username = os.getlogin()
 warning_1 = 0
 warning_2 = 0
 """ Now adding smtp server to send a notice to administrator"""
@@ -48,7 +48,7 @@ def message():
 	main()
 
 def print_intru():
-	s = os.system("mpg123 /home/adam/eas.mp3 > /dev/null 2>&1 & ")
+	s = os.system(f"mpg123 /home/{username}/eas.mp3 > /dev/null 2>&1 & ")
 	if warning_2 == 1 and warning_1 == 1:
 		with open('/var/log/snort/snort.alert.fast') as fp:
 			for line in fp:
