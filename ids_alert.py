@@ -99,9 +99,8 @@ def main():
 	
 	
 if __name__=="__main__":
-	while True:
-		try:
-			main()
-		except Exception as error:
-			print("An error occourd: ",error)
-			exit()
+	try:
+		main()
+	except Exception as error:
+		print("An error occourd: ",error)
+		exit()
