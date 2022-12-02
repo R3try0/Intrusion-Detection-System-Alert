@@ -33,9 +33,6 @@ def check_modif():
 			warning_2 = 1
 			print_intru() 
 			break
-	
-
-def activate_service
 
 
 def message():
