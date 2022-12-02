@@ -34,22 +34,16 @@ def check_modif():
 			print_intru() 
 			break
 
-
 def message():
 	r = messagebox.askyesno("Intrution Detected !!", "An Intrution has been detected it might be a false alarm. Disable internet ?")
 	if r == 1:
-		# here modify the interfaces so it will stop all interfaces so the system can go offline
-		try:
-			os.system("ifconfig wlan0 down && ifconfig lo down && ifconfig eth0 down && killall NetworkManager")
-		except:
-			os.system("ifconfig eth0 down && killall NetworkManager")
+		os.system("ifconfig wlan0 down && ifconfig lo down && ifconfig eth0 down && killall NetworkManager")
 		os.system("killall -9 mpg123")
 	else:
 		os.system("killall -9 mpg123")
 	main()
 
 def print_intru():
-	# modify it so it will play your alert sound
 	s = os.system(f"mpg123 /home/{username}/eas.mp3 > /dev/null 2>&1 & ")
 	if warning_2 == 1 and warning_1 == 1:
 		with open('/var/log/snort/snort.alert.fast') as fp:
@@ -102,5 +96,12 @@ def main():
 	os.system("cp /var/log/snort/snort.alert.fast /var/log/snort/snort.alert.fast.2")
 	os.system("cp /var/log/suricata/fast.log /var/log/suricata/fast2.log")
 	check_modif()
-
-main()
+	
+	
+if __name__=="__main__":
+	while True:
+		try:
+			main()
+		except Exception as error:
+			print("An error occourd: ",error)
+			exit()
