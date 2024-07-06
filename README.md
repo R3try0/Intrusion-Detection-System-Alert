@@ -1,4 +1,4 @@
-# ids_alert
+# Intrusion Detection System Alert
 It gives a visual alert on suricata and snort in a cause of intrution and asks you to disable the internet or not.
 
 
