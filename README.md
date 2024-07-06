@@ -1,5 +1,5 @@
 # Intrusion Detection System Alert
-It gives a visual or emails you alert on suricata and snort in a cause of intrution and asks you to disable the internet or not.
+It gives a visual or emails alerts on suricata and snort in a cause of Intrusion and asks you to disable the internet or not.
 
 
 How to run it:
